@@ -30,7 +30,7 @@
         .factory('youtubeService', youtubeService);
 
     function youtubeService($http) {
-        var apiKey = "AIzaSyDlw_qKzW7JxzHV8_vDol86LG1sS6fDVp4",
+        var apiKey = "AIzaSyBL3oYflm0BKjtIKbi64jLyelbandehZ4A",
             apiURL = "https://www.googleapis.com/youtube/v3/search?videoEmbeddable=true&order=date&part=snippet&channelId=UCWu91J5KWEj1bQhCBuGeJxw&type=video&maxResults=50&key=" + apiKey,
             youtubeFactory = {};
 
