@@ -15,7 +15,7 @@
             Search: <input type="text" ng-model="searchText" />
         <div class="container">
             <h2 ng-bind="main.message"></h2>
-            <div class="youtube-thumbnail col-md-4" ng-repeat="vid in main.videoListing | filter: searchText ">
+            <div class="youtube-thumbnail col-md-4" ng-repeat="vid in main.videoListing | filter: searchText | limitTo: 9">
                 <a ng-href="https://www.youtube.com/watch?v={{vid.id.video}}" target="_blank">
                     <img ng-src="{{vid.snippet.thumbnails.medium.url}}" />
                     <p ng-bind="vid.snippet.title"></p>
