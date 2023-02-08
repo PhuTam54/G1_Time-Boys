@@ -1,7 +1,7 @@
 (
     function () {
-    angular.module('youtubeApp', []);
-}
+        angular.module('youtubeApp', []);
+    }
 )();
 
 (function () {
