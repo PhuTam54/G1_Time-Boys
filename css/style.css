@@ -7,10 +7,10 @@ section .search {
     font-size: 50px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 section .search input {
     width: 50%;
-    height: 30px;
-    
+    height: 30px;  
 }
