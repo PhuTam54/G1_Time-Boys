@@ -1,0 +1,14 @@
+.error{
+    color: red;
+}
+body{
+    background-color: white;
+    padding-top: 160px;
+}
+.container{
+    background-color: rgb(243, 235, 235);
+    padding: 50px;
+    border: 10px;
+    border-radius: 5px;
+    max-height: 800px;
+}
