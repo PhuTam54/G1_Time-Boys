@@ -24,12 +24,12 @@
             </p>
         </div>         
         <div class="form-group" ng-class="{ 'has-error' : 
-             loginForm.userName.$invalid && !loginForm.userName.$pristine }">
+             loginForm.email.$invalid && !loginForm.email.$pristine }">
             <label>Email:</label>
-            <input type="email" name="userName" class="form-control" 
-                   ng-model="userName">
+            <input type="email" name="email" class="form-control" 
+                   ng-model="email">
             <p 
-          ng-show="loginForm.userName.$invalid && !loginForm.userName.$pristine" 
+          ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" 
             class="help-block">
               Enter a valid email.
             </p>
