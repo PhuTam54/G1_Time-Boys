@@ -5,12 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project</title>
-
+  <title>Form Validation AngularJS</title>
   
   <!-- BOOTSTRAP CSS  -->
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- MAIN CSS  -->
   <link rel="stylesheet" href="style.css">
@@ -60,7 +58,7 @@
       <button ng-click="update()" class="btn btn-warning" type="button">Update</button>
       <button ng-click="delete()" class="btn btn-danger" type="button">Delete</button>
       <button ng-click="cancel()" class="btn btn-danger" type="button">Cancel</button>
-      <!-- <button ng-click="add()" class="btn btn-default" type="button">Clear</button> -->
+      <button ng-click="clear()" class="btn btn-default" type="button">Clear</button>
     </form>
   </div>
   <hr>
@@ -69,6 +67,7 @@
       <table class="table table-bordered">
         <tbody>
           <tr>
+            <span>USER LIST</span><br><br>
             <td>Name</td>
             <td>Email</td>
             <td>Password</td>
@@ -90,9 +89,6 @@
 
    <!-- ANGULAR JS  -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-
-  <!-- ANGULAR JS  -->
-  <!-- <script src="https://code.angularjs.org/1.4.0-rc.1/angular.js"></script> -->
 
   <!-- MAIN JS  -->
   <script src="app.js"></script>

@@ -25,3 +25,7 @@ a{
 .row {
     margin: 0 auto;
 }
+
+span {
+    color: blue;
+}
