@@ -4,12 +4,19 @@ var validationApp = angular.module('validationApp', []);
 // create angular controller
 validationApp.controller('mainController', function($scope) {
     $scope.phoneNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/;
+
 	// function to submit the form after all validation has occurred			
+	$scope.submitForm = function(isValid) {
+
+		// check to make sure the form is completely valid
+		if (isValid) { 
+			alert('Login Form is valid');
+		}
+	};			
 	
     $scope.datas = [];
 	if (localStorage.getItem('user-list')){
 		$scope.datas = angular.fromJson(localStorage.getItem('user-list'));
-
 	}
 	$scope.add_user = function(){
 		var user = [];

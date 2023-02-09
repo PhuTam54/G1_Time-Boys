@@ -1,40 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youtube Angularjs</title>
-    
-    <!-- FONT AWESOME  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <title>Project</title>
+
     <!-- MAIN CSS  -->
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<!-- ok -->
 <body>
-    <section ng-app="youtubeApp" ng-controller="mainController as main">
-        <div class="search">
-            <i class="fa-brands fa-youtube"></i>
-            Search <input type="text" ng-model="searchText" class="search__input" /></div>
-            <div class="container">
-                <h2 ng-bind="main.message"></h2>
-                <div class="youtube-thumbnail col-md-4" ng-repeat="vid in main.videoListing | filter: searchText | limitTo: 9">
-                    <a ng-href="https://www.youtube.com/watch?v={{vid.id.video}}" target="_blank">
-                        <img ng-src="{{vid.snippet.thumbnails.medium.url}}" />
-                        <p ng-bind="vid.snippet.title"></p>
-                    </a>
-                </div>
-            </div>
-        </section>
+    <!-- Code o day.... -->
+    
 
-    <!-- ANGULAR JS  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-    <!-- ANGFULAR JS  -->
-    <script src="js/app.js"></script>
+
+
+
+    <!-- MAIN JS  -->
+    <script src="js/main.js"></script>
+
 </body>
-
 </html>
