@@ -11,4 +11,9 @@ body{
     border: 10px;
     border-radius: 5px;
     max-height: 800px;
+    width: 500px;
 }
+.container button {
+    margin-top: 10px;
+}
+    
