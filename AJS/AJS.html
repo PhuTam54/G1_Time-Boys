@@ -1,59 +1,101 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
-    <script src="https://code.angularjs.org/1.4.0-rc.1/angular.js"></script>
-    <script src="/AJS/AJS.js"></script>
-    <link rel="stylesheet" href="/AJS/AJS.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project</title>
+
+  
+  <!-- BOOTSTRAP CSS  -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- MAIN CSS  -->
+  <link rel="stylesheet" href="../AJS/AJS.css">
 </head>
+
 <body ng-app="validationApp" ng-controller="mainController">
-<div class="container">
+  <div class="container">
     <a href="">User List</a>
     <form name="loginForm" ng-submit="submitForm(loginForm.$valid)" novalidate>
-        <div class="form-group" ng-class="{ 'has-error' : 
+      <div class="form-group" ng-class="{ 'has-error' : 
              loginForm.name.$invalid && !loginForm.name.$pristine }">
-            <label>Name:</label>
-            <input type="text" name="name" class="form-control" ng-model="name" 
-                   ng-minlength="3" ng-maxlength="8" required placeholder="Enter your name">
-            <p ng-show="loginForm.name.$dirty && loginForm.name.$error.required" 
-               class="help-block">Name is required</p>
-            <p ng-show="loginForm.name.$error.minlength" class="help-block">
-               Name is too short.
-            </p>
-            <p ng-show="loginForm.name.$error.maxlength" class="help-block">
-              Name is too long.
-            </p>
-        </div>         
-        <div class="form-group" ng-class="{ 'has-error' : 
+        <label>Name:</label>
+        <input type="text" name="name" class="form-control" ng-model="acc.name" ng-minlength="3" ng-maxlength="8" required
+          placeholder="Enter your name">
+        <p ng-show="loginForm.name.$dirty && loginForm.name.$error.required" class="help-block">Name is required</p>
+        <p ng-show="loginForm.name.$error.minlength" class="help-block">
+          Name is too short.
+        </p>
+        <p ng-show="loginForm.name.$error.maxlength" class="help-block">
+          Name is too long.
+        </p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : 
              loginForm.email.$invalid && !loginForm.email.$pristine }">
-            <label>Email:</label>
-            <input type="email" name="email" class="form-control" 
-                   ng-model="email" required placeholder="Enter your email">
-            <p 
-          ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" 
-            class="help-block">
-              Enter a valid email.
-            </p>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error' : 
+        <label>Email:</label>
+        <input type="email" name="email" class="form-control" ng-model="acc.email" required placeholder="Enter your email">
+        <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" class="help-block">
+          Enter a valid email.
+        </p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : 
              loginForm.password.$invalid && !loginForm.password.$pristine }">
-            <label>Password:</label>
-            <input type="password" name="password" class="form-control" 
-                   ng-model="password" ng-minlength="6" ng-maxlength="8" required placeholder="Enter your password">
-            <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" 
-               class="help-block">Password must be between 6-8 characters.</p>
-        </div>
-        <div class="form-group" ng-class="'has-error' : loginForm.phone.$invalid && !loginForm.phone.$pristine }">
-            <label for="">Phone:</label>
-            <input type="phone" name="phone" class="form-control" ng-model="phone" ng-maxlength="10" required placeholder="Enter your phone">
-            <p ng-show="loginForm.phone.$invalid && !loginForm.phone.$pristine" 
-               class="help-block">Phone must be 10 numbers</p>
-        </div>        
-        <button type="submit" class="btn btn-primary" 
-              ng-disabled="loginForm.$invalid">
-          Submit
-        </button>        
+        <label>Password:</label>
+        <input type="password" name="password" class="form-control" ng-model="acc.password" ng-minlength="6"
+          ng-maxlength="8" required placeholder="Enter your password">
+        <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="help-block">Password must be
+          between 6-8 characters.</p>
+      </div>
+      <div class="form-group" ng-class="'has-error' : loginForm.phone.$invalid && !loginForm.phone.$pristine }">
+        <label for="">Phone:</label>
+        <input type="phone" name="phone" class="form-control" ng-model="acc.phone" ng-maxlength="10" required
+          placeholder="Enter your phone">
+        <p ng-show="loginForm.phone.$invalid && !loginForm.phone.$pristine" class="help-block">Phone must be 10 numbers
+        </p>
+      </div>
+      <button ng-click="insert()" class="btn btn-primary" type="button">Add</button>
+      <button ng-click="update()" class="btn btn-warning" type="button">Update</button>
+      <button ng-click="delete()" class="btn btn-danger" type="button">Delete</button>
+      <button ng-click="cancel()" class="btn btn-danger" type="button">Cancel</button>
+      <!-- <button ng-click="add()" class="btn btn-default" type="button">Clear</button> -->
     </form>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Password</td>
+            <td>Phone</td>
+          </tr>
+          <tr ng-repeat="acc in list_acc">
+            <td>{{acc.name}}</td>
+            <td>{{acc.email}}</td>
+            <td>{{acc.password}}</td>
+            <td>{{acc.phone}}</td>
+            <td>
+              <a ng-click="edit($index)"><i class="fas fa-edit">edit</i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
+
+   <!-- ANGULAR JS  -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+
+  <!-- ANGULAR JS  -->
+  <!-- <script src="https://code.angularjs.org/1.4.0-rc.1/angular.js"></script> -->
+
+  <!-- MAIN JS  -->
+  <script src="../AJS/AJS.js"></script>
 </body>
+
 </html>

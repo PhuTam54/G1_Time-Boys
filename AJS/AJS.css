@@ -21,3 +21,7 @@ a{
     float: right;
     font-size: 15px;
 }
+
+.row {
+    margin: 0 auto;
+}
