@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/AJS/AJS.css">
 </head>
 <body ng-app="validationApp" ng-controller="mainController">
-<div class="container" style="width:500px">
+<div class="container">
     <form name="loginForm" ng-submit="submitForm(loginForm.$valid)" novalidate>
         <div class="form-group" ng-class="{ 'has-error' : 
              loginForm.name.$invalid && !loginForm.name.$pristine }">
