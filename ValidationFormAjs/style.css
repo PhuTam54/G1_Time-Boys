@@ -1,9 +1,6 @@
-.error{
-    color: red;
-}
 body{
     background-color: white;
-    padding-top: 160px;
+    padding-top: 100px;
 }
 .container{
     background-color: rgb(243, 235, 235);
@@ -22,10 +19,10 @@ a{
     font-size: 15px;
 }
 
-.row {
+.list {
     margin: 0 auto;
 }
 
-span {
+.list span {
     color: blue;
 }
