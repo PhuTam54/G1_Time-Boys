@@ -1,4 +1,4 @@
-# G1_TimeBoys
+# G1_The Time Boys
 PROJECT SEM 1
 
 Member:
