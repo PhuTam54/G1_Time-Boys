@@ -1,28 +1,6 @@
-body{
-    background-color: white;
-    padding-top: 100px;
+table{
+    border: solid 1px blue;
 }
-.container{
-    background-color: rgb(243, 235, 235);
-    padding: 50px;
-    border: 10px;
-    border-radius: 5px;
-    max-height: 800px;
-    width: 500px;
-}
-.container button {
-    margin-top: 10px;
-}
-a{
-    position: relative;
-    float: right;
-    font-size: 15px;
-}
-
-.list {
-    margin: 0 auto;
-}
-
-.list span {
-    color: blue;
+table th, td{
+    border: solid 1px blue;
 }
