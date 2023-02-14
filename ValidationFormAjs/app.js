@@ -1,67 +1,101 @@
-// create angular app
-(function () {
-	angular
-		.module('validationApp', [])
-		.controller('validationCtrl', validationCtrl)
 
-		validationCtrl.$inject = ['$scope']
-		
-		function validationCtrl($scope) {
-			$scope.acc = {};
-			$scope.list_acc = [
-				{
-					name: "Phu Tam",
-					email: "phutamytb@gmail.com",
-					password: "123456",
-					phone: 99999999
-				},
-				{
-					name: "Anh Duy",
-					email: "anhduy@gmail.com",
-					password: "123456",
-					phone: 0111111111
-				},
-				{
-					name: "Tuan Kien",
-					email: "tuankien@gmail.com",
-					password: "123456",
-					phone: 0122222222
-				}
-			]
-			// ADD FUNCTION 
-			$scope.add = function() {
-				$scope.list_acc.push($scope.acc);
-				$scope.index = $scope.list_acc.length -1;
-			}
-			// UPDATE FUNCTION 
-			$scope.update = function() {
-				$scope.list_acc[$scope.index] = angular.copy($scope.acc)
-			}
-			// DELETE FUNCTION 
-			$scope.delete = function() {
-				$scope.list_acc.splice($scope.index, 1)
-		
-				$scope.clear();
-			}
-			// CANCEL FUNCTION 
-			$scope.cancel = function() {
-				if ($scope.index < 0) {
-					$scope.clear();
-				}else {
-					$scope.edit($scope.index)
-				}
-			}
-			// CLEAR FUNCTION 
-			$scope.clear = function () {
-				$scope.acc = {};
-				$scope.index = -1;
-			}
-			// EDIT FUNCTION 
-			$scope.index = -1
-			$scope.edit = function(index) {
-				$scope.index = index;
-				$scope.acc = angular.copy($scope.list_acc[index])
-			}
-		}
-})();
-
+var myApp = angular.module("myApp", []);
+// Register Service
+myApp.service("RegisterService" , function(){
+var uid = 1;
+var users = [{
+'id' : 0,
+'name' : 'Duy',
+'email' : 'DuyAnh@gmail.com',
+'password': '123456789',
+'phone' : '0964603019'}]; 
+ 
+ // Save User
+ this.save = function(user)  
+ {
+ if(user.id == null)                       
+ {
+ user.id = uid++;
+ users.push(user);
+ }
+ else
+ {
+ for(var i in users)
+ {
+ if(users[i].id == user.id)
+ {
+ users[i] = user;
+ }
+ }
+ }
+ };
+ 
+ // Search User
+ this.get = function(id)
+ {
+ for(var i in users )
+ {
+ if( users[i].id == id)
+ {
+ return users[i];
+ }
+ }
+ };
+ 
+ // Delete User
+ this.delete = function(id)
+ {
+ for(var i in users)
+ {
+ if(users[i].id == id)
+ {
+ users.splice(i,1);
+ }
+ }
+ }; 
+ 
+ // List Users
+ this.list = function()
+ {
+ return users;
+ }; 
+});
+ 
+// Register Controller 
+myApp.controller("RegisterController" , function($scope , RegisterService){
+console.clear();
+$scope.ifSearchUser = false;
+$scope.title ="User List";
+$scope.users = RegisterService.list();
+$scope.saveUser = function()
+{
+ console.log($scope.newuser);
+ if($scope.newuser == null || $scope.newuser == angular.undefined)
+ return;
+ RegisterService.save($scope.newuser);
+ $scope.newuser = {};
+}; 
+$scope.delete = function(id)
+{
+ RegisterService.delete(id);
+ if($scope.newuser != angular.undefined && $scope.newuser.id == id)
+ {
+ $scope.newuser = {};
+ }
+}; 
+$scope.edit = function(id)
+{
+ $scope.newuser = angular.copy(RegisterService.get(id));
+}; 
+$scope.searchUser = function(){
+ if($scope.title == "User List"){
+ $scope.ifSearchUser=true;
+ $scope.title = "Back";
+ }
+ else
+ {
+ $scope.ifSearchUser = false;
+ $scope.title = "User List";
+ }   
+};
+});
