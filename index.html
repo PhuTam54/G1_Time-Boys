@@ -27,27 +27,106 @@
         <!-- HEADER  -->
         <header>
             <div class="header__content">
-
+                <p>ZARA</p>
+                <nav>
+                    <ul>
+                        <li class="active"><a href="#">HOME</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">SERVICE</a></li>
+                        <li><a href="#">TEAM</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                        <li><a href="#"><i class="fa-solid fa-bars"></i> MENU</a></li>
+                    </ul>
+                </nav>
+                <a href="#"><i class="fa-solid fa-user"></i> Sign Up</a>
             </div>
+            
         </header>
 
         <!-- CAROUSEL -->
         <section class="carousel">
             <div class="carousel__content">
-
+                <h1>Best Zara Here</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button>LEARN MORE</button>
             </div>
         </section>
 
         <!-- INTRO  -->
         <section class="intro">
-            <div class="intro__item"></div>
-            <div class="intro__item"></div>
-            <div class="intro__item"></div>
+            <div class="intro__item intro__text">
+                <div>
+                    <h3>Therapi</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora facilis ipsa vero tempore
+                        provident. Tempora.</p>
+                </div>
+            </div>
+            <div class="intro__item intro__img1">
+                <img src="img/a2.jpg" alt="Therapi">
+            </div>
+            <div class="intro__item intro__img2">
+                <img src="img/a3.jpg" alt="Clinic">
+            </div>
+            <div class="intro__item intro__text">
+                <div>
+                    <h3>Clinic</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi iusto sapiente voluptatibus, non
+                        error laboriosam.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NUMBER  -->
+        <section class="number">
+            <div class="number__content">
+                <div class="number__item">
+                    <p class="counter">54</p>
+                    <p>Therapi Clinic</p>
+                </div>
+                <div class="number__item">
+                    <p class="counter">100</p>
+                    <p>Benefit</p>
+                </div>
+                <div class="number__item">
+                    <p class="counter">1234</p>
+                    <p>Happy Client</p>
+                </div>
+                <div class="number__item">
+                    <p class="counter">999</p>
+                    <p>Expert Worker</p>
+                </div>
+            </div>
         </section>
 
         <!-- SERVICES -->
         <section class="services">
-
+            <h2>OUR SERVICES</h2>
+            <div class="service__content">
+                <div class="service__item">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                    <h3>Therapi Clinic</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="service__item">
+                    <i class="fa-solid fa-snowflake"></i>
+                    <h3>Therapi Clinic</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <button>Learn more</button>
+                </div>
+                <div class="service__item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <h3>Therapi Clinic</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <button>Learn more</button>
+                </div>
+                <div class="service__item">
+                    <i class="fa-brands fa-slideshare"></i>
+                    <h3>Therapi Clinic</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <button>Learn more</button>
+                </div>
+            </div>
         </section>
 
         <!-- CONTACT -->
@@ -69,6 +148,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
         integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Jquery Waypoints: Hàm hỗ trợ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+        integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- CountUp JS  -->
+    <script src="js/jquery.countup.js"></script>
+    <script>
+        $('.counter').countUp();
+    </script>
 
     <!-- MAIN JS  -->
     <script src="js/main.js"></script>
